@@ -3,7 +3,7 @@
     "path": "~/Juliana/Projeto Estatistica 2VA/codigoapp.R",
     "project_path": "codigoapp.R",
     "type": "r_source",
-    "hash": "1504277989",
+    "hash": "574436983",
     "contents": "",
     "dirty": false,
     "created": 1681859618883.0,
@@ -12,15 +12,15 @@
     "properties": {
         "source_window_id": "",
         "Source": "Source",
-        "cursorPosition": "166,0",
-        "scrollLine": "158"
+        "cursorPosition": "199,0",
+        "scrollLine": "179"
     },
     "folds": "",
-    "lastKnownWriteTime": 1681859599,
+    "lastKnownWriteTime": 1681862163,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1681859599,
+    "last_content_update": 1681862163353,
     "read_only": false,
     "read_only_alternatives": []
 }

@@ -101,7 +101,9 @@ server <- function(input, output) {
       ylab("Frequência") +
       theme_minimal()
   })
-  #------------------------------------------------------------------
+  #------------------------------------------------------------
+  # Intervalo de Confiança
+  #------------------------------------------------------------
   output$intervaloConfianca <- renderPrint({
     xbar <- mean(dados_filtrados1$Velocidade)
     s <- sqrt(input$variancia)
@@ -125,7 +127,7 @@ server <- function(input, output) {
   })
   #----------------------------------------------------
   # Interpretação dos Resultados
-  #------------------------------------------------------
+  #----------------------------------------------------
   output$interpretacao <- renderPrint({
     p_valor <- t.test(dados_filtrados$Velocidade, mu = input$mu0, alternative = input$testeTipo, var.equal = TRUE)$p.value
     alpha <- input$alpha
@@ -136,6 +138,9 @@ server <- function(input, output) {
       paste("Não rejeitamos a Hipótese Nula. Não há evidências suficientes para concluir que a média da velocidade é diferente de", input$mu0, "km/h com nível de significância de", alpha)
     }
   })
+  #----------------------------------------------------
+  # Mapa
+  #----------------------------------------------------
   output$mapa <- renderLeaflet({
     leaflet(data = dados) %>%
       addTiles() %>%
@@ -156,7 +161,9 @@ server <- function(input, output) {
         html = htmltools::HTML("<div class='leaflet-control leaflet-bar my-control-class'><button id='meu-botao'>Meu Controle</button></div>")
       )
   })
-    
+  #----------------------------------------------------
+  # Gráfico de Dispersão, equação da reta, R e R²
+  #----------------------------------------------------
   output$reg <- renderPlot({
     x <- cars$dist
     y <- cars$speed
